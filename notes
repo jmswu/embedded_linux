@@ -18,7 +18,7 @@ load mmc 1:1 0x88000000 /boot/dtbs/5.10.168-ti-r77/am335x-boneblack-uboot-univ.d
 fdt addr 0x88000000
 fdt resize 2048
 load mmc 1:1 0x88400000 /boot/dtbs/5.10.168-ti-r77/overlays/BB-BONE-eMMC1-01-00A0.dtbo
-fdt appy 0x88400000
+fdt apply 0x88400000
 
 setenv bootargs console=ttyS0,115200n8 root=/dev/mmcblk1p1 ro rootfstype=ext4 rootwait
 
