@@ -11,6 +11,7 @@ console=ttyS0,115200n8 bone_capemgr.uboot_capemgr_enabled=1 root=/dev/mmcblk1p1 
 
 load mmc 1:1 0x88080000 /boot/initrd.img-5.10.168-ti-r77
 load mmc 1:1 0x82000000 /boot/vmlinuz-5.10.168-ti-r77
+load mmc 1:1 0x88000000 /boot/dtbs/5.10.168-ti-r77/am335x-boneblack.dtb
 
 load mmc 1:1 0x88000000 /boot/dtbs/5.10.168-ti-r77/am335x-boneblack-uboot.dtb
 
@@ -31,4 +32,11 @@ Kernel image @ 0x82000000 [ 0x000000 - 0xae0200 ]
    Loading Device Tree to 8f7c2000, end 8f859fff ... OK
 
 
+bootz 0x82000000 0x88080000:7a5dfa 88000000
+
+# these command can boot bbb
+load mmc 1:1 0x88080000 /boot/initrd.img-5.10.168-ti-r77
+load mmc 1:1 0x82000000 /boot/vmlinuz-5.10.168-ti-r77
+load mmc 1:1 0x88000000 /boot/dtbs/5.10.168-ti-r77/am335x-boneblack.dtb
+setenv bootargs console=ttyS0,115200n8 root=/dev/mmcblk1p1 ro rootfstype=ext4 rootwait
 bootz 0x82000000 0x88080000:7a5dfa 88000000
