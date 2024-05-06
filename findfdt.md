@@ -43,3 +43,7 @@ elif test $board_rev = OS01;
 then setenv fdtfile am335x-osd3358-sm-red-v4.dtb; 
 
 else setenv fdtfile am335x-boneblack.dtb;
+
+
+# BB FDT file 
+am335x-boneblack.dtb
